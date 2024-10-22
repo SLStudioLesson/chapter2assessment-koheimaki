@@ -51,7 +51,7 @@ public class RecipeFileHandler {
      // 
     public void addRecipe(String recipeName, String ingredients) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true) )) {
-            writer.write(recipeName + "" + ingredients);
+            writer.write(recipeName + "," + ingredients);
             writer.newLine();
         } catch (IOException e) {
             System.out.println("Error reading file:" + e.getMessage());
