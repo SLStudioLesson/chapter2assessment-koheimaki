@@ -40,6 +40,7 @@ public class RecipeUI {
                         break;
                     case "2":
                         // 設問2: 新規登録機能
+                        addNewRecipe();
                         break;
                     case "3":
                         // 設問3: 検索機能
@@ -73,7 +74,16 @@ public class RecipeUI {
             for (String recipe : recipes) {
                 String[] data = recipe.split(",");
                 System.out.println("Recipe Name: " + data[0]);
-                System.out.println("Main Ingredients: " + data[1]);
+                System.out.print("Main Ingredients: ");
+
+                for (int i = 1; i < data.length; i++) {
+                    System.out.print(" " +data[i].trim());
+
+                    if (i < data.length - 1) {
+                        System.out.print(",");
+                    }
+                }
+                System.out.println();
                 System.out.println("-----------------------------------");
             }
         }
@@ -86,9 +96,7 @@ public class RecipeUI {
      * @throws java.io.IOException 入出力が受け付けられない
      */
     private void addNewRecipe() throws IOException {
-        System.out.println();
-        System.out.println("Enter recipe name:");
-        
+       
     }
 
     /**
